@@ -31,17 +31,17 @@ Your PC must support virtualization which is popular today, following the sectio
      * Connect to the NAT network
      * Enable network promiscuous mode
 
-2. (30%)Install Kali Linux
+2. (25%)Install Kali Linux
 Follow the steps below to setup Kali Linux in its VM:
 
    * (5%) Go to its official webset [Kali Linux](https://www.kali.org/get-kali/), download its 64-bit Virtual machine in VirtualBox format.
    * (20%) Follow its [documentation](https://www.kali.org/docs/virtualization/import-premade-virtualbox/) import this VM into VirtualBox.
 
 
-1. (30%)Install Windows server
+1. (25%)Install Windows server
 
    * (5%)Download [Windows Server 2019 VHD](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
-   * (25%)Create a VM and import this Windows server
+   * (20%)Create a VM and import this Windows server
 
    * Extending the Trial Period (If you have an old one)
      In Powershell, execute this command to see how many days you have left in your trial:
