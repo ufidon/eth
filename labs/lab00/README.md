@@ -4,6 +4,7 @@
 **In this lab, we will build our own penetration test environment using Kali Linux and Windows server 2019**
 
 * Install  [VirtualBox](https://www.virtualbox.org/) on your own PC or laptop. The physical computer you use is called a "Host". The virtual machines that run on it are called "Guests". 
+* Create a NAT network and attach all VMs to it.
 * Create a virtual machine for Kali Linux
 * Create a virtual machine for Windows server 2019
 
@@ -26,7 +27,7 @@ Your PC must support virtualization which is popular today, following the sectio
    * NAT network settings:
      * Create a NAT network in VirtualBox
    * VM settings:
-     * *2GB memory/100GB dynamic disk*
+     * *2GB memory* (Your laptop needs at least 8GB memory)
      * Connect to the NAT network
      * Enable network promiscuous mode
 
@@ -39,10 +40,8 @@ Follow the steps below to setup Kali Linux in its VM:
 
 1. (30%)Install Windows server
 
-   * (5%)Download [Windows Server 2019 ISO](https://www.microsoft.com/en-us/windows-server)
-   * (10%)Install this Windows server
-   * (10%)Enable ping response in the firewall settings of the guest Windows server
-   * (5%)Install VirtualBox Guest Additions in the guest Windows server
+   * (5%)Download [Windows Server 2019 VHD](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
+   * (25%)Create a VM and import this Windows server
 
    * Extending the Trial Period (If you have an old one)
      In Powershell, execute this command to see how many days you have left in your trial:
@@ -55,19 +54,16 @@ Follow the steps below to setup Kali Linux in its VM:
 
      You can extend the trial six times, for up to three years.
 
-2. (10%) Show the NAT network is working
+2. (30%) Show the NAT network is working
 	 * On the Windows Server VM, find its ip configuration of the Ethernet adapter connected to the NAT: 	ipconfig /all
 	 * On the Kali Linux VM, find its ip configuration of the Ethernet adapter connected to the NAT: 	ifconfig -a
 	 * from the Windows server VM ping the Kali VM
 	 * from the Kali VM ping the Windows server VM
 
-3. (20%) **Review questions**
 
-In the following two practices, screenshots of at least 5 commands are required to put in the lab report. To decrease the number of screenshots, you may put 5 commands in one screenshot.
 
-   1. (10%) Practice basic Linux commands in the [Linux commands cheatsheet](./commandCheatsheets/LinuxCommandMemento.pdf)
-   2. (10%) Practice basic Windows commands in the [Windows commands cheatsheet](./commandCheatsheets/CommandPromptCheatsheet.pdf)
 
+*Optional*
 
 After installation, *make sure you can access Internet*, update and upgrade Kali, then install the following tools. Open a terminal window, run the following commands:
 
@@ -82,7 +78,8 @@ sudo apt full-upgrade -y
 sudo apt install apt-transport-https dirmngr
 sudo apt install p7zip-full build-essential gcc perl cmake automake curl git geany okular vim
 ```
-   * Install [VirtualBox Guest Additions in the guest Kali Linux](https://www.kali.org/docs/virtualization/install-virtualbox-guest-additions/).
+
+* Install [VirtualBox Guest Additions in the guest Kali Linux](https://www.kali.org/docs/virtualization/install-virtualbox-guest-additions/).
 
 
 ## References
