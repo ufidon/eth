@@ -69,7 +69,7 @@ In the following two practices, screenshots of at least 5 commands are required 
    2. (10%) Practice basic Windows commands in the [Windows commands cheatsheet](./commandCheatsheets/CommandPromptCheatsheet.pdf)
 
 
-After installation, *make sure you can access Internet*, update and upgrade Ubuntu, then install the following tools. Open a terminal window, run the following commands:
+After installation, *make sure you can access Internet*, update and upgrade Kali, then install the following tools. Open a terminal window, run the following commands:
 
 ```bash
 # 1. populate the repository
@@ -82,7 +82,7 @@ sudo apt full-upgrade -y
 sudo apt install apt-transport-https dirmngr
 sudo apt install p7zip-full build-essential gcc perl cmake automake curl git geany okular vim
 ```
-   * Install VirtualBox Guest Additions in the guest Kali Linux.
+   * Install [VirtualBox Guest Additions in the guest Kali Linux](https://www.kali.org/docs/virtualization/install-virtualbox-guest-additions/).
 
 
 ## References
