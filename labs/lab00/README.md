@@ -35,7 +35,7 @@ Your PC must support virtualization which is popular today, following the sectio
 Follow the steps below to setup Kali Linux in its VM:
 
    * (5%) Go to its official webset [Kali Linux](https://www.kali.org/get-kali/), download its 64-bit Virtual machine in VirtualBox format.
-   * (20%) Follow its [documentation](https://www.kali.org/docs/virtualization/import-premade-virtualbox/) import this VM into VirtualBox.
+   * (20%) Follow its [documentation](https://www.kali.org/docs/virtualization/import-premade-virtualbox/) add this VM into VirtualBox.
 
 
 1. (25%)Install Windows server
