@@ -34,8 +34,12 @@ Your PC must support virtualization which is popular today, following the sectio
 2. (25%)Install Kali Linux
 Follow the steps below to setup Kali Linux in its VM:
 
-   * (5%) Go to its official webset [Kali Linux](https://www.kali.org/get-kali/), download its 64-bit Virtual machine in VirtualBox format.
+   * (5%) Go to its official website [Kali Linux](https://www.kali.org/get-kali/), download its 64-bit Virtual machine in VirtualBox format.
    * (20%) Follow its [documentation](https://www.kali.org/docs/virtualization/import-premade-virtualbox/) add this VM into VirtualBox.
+   ```bash
+   default username: kali
+   default password: kali
+   ```
 
 
 1. (25%)Install Windows server
@@ -55,12 +59,33 @@ Follow the steps below to setup Kali Linux in its VM:
      You can extend the trial six times, for up to three years.
 
 2. (30%) Show the NAT network is working
-	 * On the Windows Server VM, find its ip configuration of the Ethernet adapter connected to the NAT: 	ipconfig /all
-	 * On the Kali Linux VM, find its ip configuration of the Ethernet adapter connected to the NAT: 	ifconfig -a
+	 * On the Windows Server VM, find its ip configuration of the Ethernet adapter connected to the NAT: 	
+    ```cmd
+    ipconfig /all
+    :: take a note of your Windows VM IP address
+    ```
+	 * On the Kali Linux VM, find its ip configuration of the Ethernet adapter connected to the NAT: 	
+    ```bash
+    ifconfig -a
+    :: take a note of your Kali Linux VM IP address
+    ```
 	 * from the Windows server VM ping the Kali VM
+    ```cmd
+    ping KaliIP // the Kali ip address noted before
+    ```
 	 * from the Kali VM ping the Windows server VM
+    ```bash
+    ping WindowsIP // the Windows ip address noted before
+    ```
 
+**Note**
 
+Please fully update your Kali at home, it takes a long time.
+
+```bash
+sudo apt update
+sudo apt upgrade
+```
 
 
 *Optional*
