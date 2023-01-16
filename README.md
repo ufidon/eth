@@ -37,3 +37,4 @@ Tentative topics:
 * *Additional resources*
   * [Hacking security ebooks](https://github.com/yeahhub/Hacking-Security-Ebooks)
   * [Hacking books](https://github.com/InspectorDidi/Hacking-Books)
+* [The Hitchhiker’s Guide to Python](https://docs.python-guide.org/)
