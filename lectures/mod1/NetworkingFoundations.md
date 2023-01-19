@@ -152,12 +152,33 @@
 **Exercises**
 
 On Kali Linux, 
-* install [INetSim: Internet Services Simulation Suite](https://www.inetsim.org/packages.html)
 * Play [INetSim](https://www.inetsim.org/documentation.html)
+  ```bash
+  # 1. start inetsim in one command tab
+  sudo inetsim
+
+  # 2. in another command tab
+  # 2.1 show simulation services provided by inetsim
+  netstat -a | grep -i lis | grep -i tcp # show port name
+
+  # 2.2 show port number
+  netstat -a -n | grep -i lis | grep -i tcp
+
+  # 2.3 try webservice
+  # type http://localhost in firefox address bar
+  # type https://localhost in firefox address bar
+
+  # 2.4 try ftp service
+  ftp localhost
+  ```
 * Use Wireshark to sniff
   * TCP handshake: SYN, SYN/ACK, ACK
   * TCP ports, status and flags
-
+  ```bash
+  # 1. run Wireshark and start capturing packets on eth0
+  # refresh the webpage in firefox
+  # stop Wireshark capturing and analyze the captured TCP packets
+  ```
 
 **User Datagram Protocol (UDP)**
 ---
@@ -188,7 +209,14 @@ On Kali Linux,
 
 **Exercises**
 * Use Wireshark to capture and analyze a ping request packet and its echo packet
-
+  ```bash
+  # 1. run Wireshark and start capturing packets on eth0
+  # 2. from a command window, ping 8.8.4.4 twice
+  ping 8.8.4.4 -c 2
+  # 3. stop Wireshark capturing and analyze the captured ping packets
+  # 4. find the route from your computer to 8.8.4.4
+  traceroute 8.8.4.4
+  ```
 
 **IPv4 Addressing**
 ---
@@ -245,6 +273,21 @@ On Kali Linux,
   - [base64](https://en.wikipedia.org/wiki/Base64) uses printable characters to represent binary data 
     - represents a sequence of bytes in groups of 3-bytes that can be represented by four 6-bit Base64 digits
 
+**Exercises**
+
+Using Python3 to do number conversion in different numbering systems.
+
+```python
+# 1. run python3 in a command window
+# 2. decimal number <-> binary/octal/hex number
+decnum = 123
+bin(decnum) # dec->binary
+int('0b111_1011',2) # binary->dec
+oct(decnum) # dec->octal
+int('0o173',8) # octal->dec
+hex(decnum) # dec->hex
+int('0x7b',16) # hex->dec
+```
 
 **Base 64 Encoding**
 ---
