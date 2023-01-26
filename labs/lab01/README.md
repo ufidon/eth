@@ -55,7 +55,8 @@ ping windows_server_vm_IP -c 2
       2. Install for All users
    2. [FileZilla Server](https://wiki.filezilla-project.org/FileZilla_FTP_Server)
       1. Choose all default installation options
-2. Through its administration interface, configure FileZilla server
+      2. You may refer to this [Youtube video](https://youtu.be/XXLnkeNjdCo)
+2. Through its administration interface, configure FileZilla server, refer to the previous video
    1. Under Protocols settings
       1. Set the welcome message to be "FileZilla FTP server for ethical hacking"
       2. Tick passive mode with suggested port number
@@ -70,7 +71,7 @@ ping windows_server_vm_IP -c 2
     # 1. create a test file under current folder
     echo "This is a test file from Kali" > test.txt
     # 2. login onto the FileZilla server with as user test
-    ftp windows_server_vm_IP
+    ftp windows_server_vm_IP # the ip address you got with ipconfig /all in Windows VM)
     # 3. upload test.txt to FileZilla server
     ftp> put test.txt
     ```
@@ -126,3 +127,4 @@ ping windows_server_vm_IP -c 2
 * [How To Enable Ping In Windows Server 2019 Firewall](https://www.rootusers.com/how-to-enable-ping-in-windows-server-2019-firewall/)
 * [Install OpenSSH for Windows](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell)
   * [Installing and Configuring OpenSSH on Windows Server 2019](https://techcommunity.microsoft.com/t5/itops-talk-blog/installing-and-configuring-openssh-on-windows-server-2019/ba-p/309540)
+  * [How to Enable and Configure SSH Server on Windows with OpenSSH?](https://woshub.com/connect-to-windows-via-ssh/)
