@@ -12,7 +12,7 @@ To practice ethical hacking on this system, these two protections need to be tur
 
 ## 2. Tasks
 ### Task 1: Lowering security settings
-Follow the reference, there could be some differences between Windows server 2016 and Windows server 2019. Run all commands as Administrator. For each security setting, take two screenshots:
+Follow Task2 of the [reference](https://samsclass.info/123/proj10/123p2win.htm), there could be some differences between Windows server 2016 and Windows server 2019. Run all commands as Administrator. For each security setting, take two screenshots:
 * one shows the security if on
 * the other one shows the security setting is off
 
@@ -24,7 +24,7 @@ Follow the reference, there could be some differences between Windows server 201
 5. Lower Data Execution Prevention (DEP) settings
    1. In the Windows search box, type "View advanced system settings"
    2. Close all open Windows and restart Windows server 2019 VM
-6. Install and check VMware tools if you did not install it in Lab00
+6. Install and check VMware guest additions if you did not install it in Lab00
 7. Find the system information with command systeminfo in a Command Prompt window
     ```cmd
     systeminfo
