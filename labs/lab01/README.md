@@ -128,3 +128,9 @@ ping windows_server_vm_IP -c 2
 * [Install OpenSSH for Windows](https://learn.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse?tabs=powershell)
   * [Installing and Configuring OpenSSH on Windows Server 2019](https://techcommunity.microsoft.com/t5/itops-talk-blog/installing-and-configuring-openssh-on-windows-server-2019/ba-p/309540)
   * [How to Enable and Configure SSH Server on Windows with OpenSSH?](https://woshub.com/connect-to-windows-via-ssh/)
+* [How to recover FileZilla FTP Server’s Admin Password](https://www.how2shout.com/how-to/filezilla-server-admin-password-recovery.html)
+  * FileZilla FTP Server's settings are saved in the hidden folder by default
+    ```cmd
+    C:\Users\username\AppData\Roaming\FileZilla
+    :: When FileZilla is installed by the Administrator, username is Administrator
+    ```
