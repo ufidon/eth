@@ -47,11 +47,11 @@ Analyzing a Company’s Website with ZAP
 ---
 * ZAP scan on a website needs permission
   * Scanning a website for vulnerabilities is an attack
-  * Use [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2/) for practice
+  * Use Kali VM as the target for practice
 * ZAP can be installed on [Linux, Windows and MacOS](zaproxy.org/download/)
   * Java 11 or higher is required
 * Configure ZAP as the HTTP proxy for a browser to harvest information from a website
-  * can be automatically configured with Launch Browser in ZAP
+  * can be automatically configured with Automatic Attack in ZAP
 
 
 More Proxy Functions of ZAP
@@ -69,12 +69,16 @@ More Proxy Functions of ZAP
 
 Practice
 ---
-- Download [Metasploitable 2](https://docs.rapid7.com/metasploit/metasploitable-2/) and add it to VirtualBox
-  - Connect it to the same NAT network as Kali
-  - The login for Metasploitable 2 is msfadmin:msfadmin
-- In Kali VM, use ZAP to glean information of the website hosted in Metasploitable 2
-
-
+- In Kali VM, run inetsim to host a fake website
+  ```bash
+  sudo inetsim --bind-address Kali_IP # find your Kali ip with "ifconfig -a"
+  ```
+- Inside the Windows VM
+  - Download and install a Java JDK FX
+    - [Azul Java 11, Windows, x86 64-bit JDK FX](https://www.azul.com/downloads/?version=java-11-lts&os=windows&architecture=x86-64-bit&package=jdk-fx) is recommended. Download and install the .msi file
+  - Download and install [ZAP - Zed Attack Proxy](https://www.zaproxy.org/)
+- use ZAP to glean information of the website faked by inetsim on Kali VM
+  - Click "Automated scan", in the "url to attack" field, type "http://Kali_ip"
 
 More Footprinting Tools
 ---
@@ -93,6 +97,7 @@ More Footprinting Tools
 Practice
 ---
 - In Windows server VM, download and play with [Sam Spade](https://www.majorgeeks.com/files/details/sam_spade.html)
+  - Choose Kali VM as the target
 - Refer to [Sam Spade: A Multifunction Information Toolkit](https://www.garykessler.net/library/is_tools_sam_spade.html)
 
 
@@ -298,3 +303,6 @@ Phishing
 * [HTTP Prompt](https://http-prompt.com/)
   * [httpie](https://httpie.io/)
     * [source](https://github.com/httpie/httpie)
+* [Metaspoitable3](https://www.rapid7.com/blog/post/2016/11/15/test-your-might-with-the-shiny-new-metasploitable3/)
+  * [download]9https://sourceforge.net/projects/metasploitable3-ub1404upgraded/
+  * login with Username - vagrant;password - vagrant
