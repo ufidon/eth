@@ -129,7 +129,7 @@ Gathering information from browser cookies
   - Security issue
 
 
-Practice
+Practice  ✏️ 
 ---
 - [Check cookies manually](https://www.cookieyes.com/blog/how-to-check-cookies-on-your-website-manually/)
 - [View, edit, and delete cookies](https://developer.chrome.com/docs/devtools/storage/cookies/)
