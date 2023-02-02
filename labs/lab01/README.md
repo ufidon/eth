@@ -105,6 +105,13 @@ ping windows_server_vm_IP -c 2
     Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
     Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 
+    ## NOTE: if you have trouble installing OpenSSH.Server~~~~0.0.1.0
+    # you may use the command below
+    dism /Online /Add-Capability /CapabilityName:OpenSSH.Server~~~~0.0.1.0
+    # or install it following the 5th reference below using GUI
+    # or download the msi installer from https://github.com/PowerShell/Win32-OpenSSH
+    # then install it.
+
     # 4. start and configure OpenSSH Server
     Start-Service sshd
     Set-Service -Name sshd -StartupType 'Automatic'
