@@ -120,7 +120,7 @@ Windows Vista
 Practice ✏️ 
 ---
 - Explore ASLR
-  - download and run process explorer
+  - download and run [process explorer](https://learn.microsoft.com/en-us/sysinternals/downloads/process-explorer)
     - view, show lower pane
     - view, lower pane view, dlls
     - view, select columns, dll tab, base address
@@ -128,7 +128,209 @@ Practice ✏️
   - reboot to see base address change
 
 
+Windows Server 2008
+---
+- User Account Control
+- BitLocker Drive Encryption
+- ASLR
+- Network Access Protection
+  - Granular levels of network access based on a clients level of compliance with policy
+- Server Core
+  - Small, stripped-down server, like Linux
+- Hyper-V
+  - Virtual Machines
+
+
+Windows 7
+---
+- XP Mode
+  - A virtual machine running Win XP
+- User Account Control was refined and made easier to use
+
+
+Windows 8
+---
+- Built-in antivirus
+- SmartScreen protects against phishing and social engineering by using a URL and application reputation system
+- Windows 8 secure boot using Unified Extensible Firmware Interface (UEFI) on ARM prevents rootkits
+
+
+Windows Server 2012
+---
+- Authentication Silos to reduce the risk of pass-the-hash attacks
+- DNSSEC which will someday make DNS resolutions more secure
+
+
+Windows 10
+---
+- Brings back the Start button
+- Forced automatic updates
+- Device Guard allows only trusted apps to run
+- Credential Guard uses virtualization to protect access tokens from theft
+  - Reducing the risk of pass-the-hash attacks
+
+
+Windows Server 2016
+---
+- Windows Containers
+  - Like little virtual machines
+  - Can isolate services from one another
+- Windows Defender (malware protection) is now enabled by default
+- telnet server is eliminated completely 
+- Just Enough Administration (JEA) allows for more detailed access control settings on tasks
+
+
+Windows Server 2019
+---
+- container services， shielded virtual machines
+- storage spaces direct，storage migration services， storage replication  
+- improved Windows Defender Advanced Threat Protection (ATP)
+
+
+Network Basic Input Output System (NetBIOS)
+---
+- Programming interface
+- Allows computer communication over a LAN
+- Used to share files and printers
+
+
+[NetBIOS names](https://en.wikipedia.org/wiki/NetBIOS)
+---
+- Computer names on Windows systems
+- Limit of 16 characters
+- Last character identifies type of service running
+- Must be unique on a network
+
+
+NetBIOS Null Sessions
+---
+- Null session
+  - Unauthenticated connection to a Windows computer
+  - Does not use logon and passwords values
+- Around for over a decade
+  - Still present on Windows XP
+  - Disabled on Server 2003
+  - Absent entirely in Vista and later versions
+- A large vulnerability
+
+
+Null Session Information
+---
+- Using these NULL connections allows you to gather the following information from the host:
+- List of users and groups 
+- List of machines 
+- List of shares 
+- Users and host SIDs (Security Identifiers)
+
+
+[NetBIOS Enumeration Tools](https://en.wikipedia.org/wiki/NetBIOS_over_TCP/IP)
+---
+- [nbtstat command](https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/nbtstat)
+  - Powerful enumeration tool included with the Microsoft OS
+  - Displays NetBIOS table
+- net view command
+  - Shows whether there are any shared resources on a network host
+- [net use command](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/gg651155(v=ws.11))
+  - Used to connect to a computer with shared folders or files
+
+
+Practice ✏️ 
+---
+- On Windows VM, open a command prompt
+- Practice command [nbtstat](https://www.computerhope.com/nbtstat.htm)
+- Practice command [net view](https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh875576(v=ws.11))
+
+```cmd
+:: 1. 
+nbtstat /?
+nbtstat -a Windows_VM_ip
+
+:: 2.
+net view /?
+net view Windows_VM_ip
+
+:: 3.
+net use /?
+
+:: assign drive letter E: to the shared directory on the \\server
+net use v: \\server\shared 
+```
+
+
+Additional Enumeration Tools
+---
+- Windows tools included with Kali  
+  - Smb4K, enum4linux
+- DumpSec
+  - Allows user to connect to a server and “dump”:
+    - Permissions for shares, printers, and the registry
+    - Users in column or table format
+    - Policies, rights and services
+- Hyena
+  - Shows shares and user logon names for Windows servers and domain controllers
+  - Displays graphical representation of:
+    - Microsoft Terminal Services, Windows Network, Web Client Network
+  - Finds user/group 
+- [sparta](https://github.com/SECFORCE/sparta)
+  - a python GUI application which simplifies network infrastructure penetration testing by aiding the penetration tester in the scanning and enumeration phase
+- Nessus and OpenVAS
+  - comprehensive tools
+
+
+Practice ✏️ 
+---
+- On Kali vm, open a terminal windows
+  ```bash
+  # enum4linux - enumerate Windows computers in a network
+  enum4linux -h
+  enum4linux -U Windows_VM_ip
+  ```
+
+
+Enumerating the *nix Operating System
+---
+- Solaris and OpenSolaris
+- HP-UX
+- Mac OS X and OpenDarwin
+- AIX
+- BSD UNIX
+  - FreeBSD, OpenBSD, NetBSD
+- Linux, including several distributions
+
+
+Simple Network Management Protocol (SNMP)
+---
+- Enables remote administration of servers, routers, switches, firewalls, and other devices
+- Can be used on Windows and Linux
+
+
+UNIX Enumeration
+---
+- Finger utility
+  - a popular enumeration tool for security testers
+  - Finds out who is logged in to a *nix system
+  - Determines who was running a process
+- Nessus and OpenVAS
+  - more than a *nix enumeration tool
+
+
+Practice ✏️ 
+---
+- on Kali VM
+```bash
+# 1. snmpwalk
+snmpwalk -h
+snmpwalk -v 2c -c public Kali_ip
+# 2. finger
+finger -h
+finger
+# 3. netdiscover - an ARP scanner
+netdiscover
+```
+
+
 # References
+* [What is new in Windows](https://learn.microsoft.com/en-us/windows/whats-new/)
 * _old OSes_
   * [WinWorld](https://winworldpc.com/library/operating-systems)
   * [Old versions of Linux](https://soft.lafibre.info/)
