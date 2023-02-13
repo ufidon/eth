@@ -4,4 +4,4 @@
   - [Greenbone OpenVAS](./Greenbone.md)
 - [Enumeration](./Enumeration.md)
 - [Sniffing](./Sniffing.md)
-- [Automation by programming](./Programming.md)
+- [Programming for security professionals](./Programming.md)

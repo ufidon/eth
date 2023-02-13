@@ -14,12 +14,13 @@ Tentative topics:
    1. Scanning Networks 
    2. Enumeration
    3. Sniffing
-4. [Access and Escalation](./lectures/mod4/README.md)
-   1. System Hacking
-   2. Malware
-   3. Social Engineering
-   4. Attack and Defense
-   5. Cryptography
+4. [Exploitation, Access and Escalation](./lectures/mod4/README.md)
+   1. Desktop and Server OS Vulnerabilities
+   2. System Hacking
+   3. Malware
+   4. Social Engineering
+   5. Attack and Defense
+   6. Cryptography
 5. [Exfiltration](./lectures/mod5/README.md)
 6. [Sustainment](./lectures/mod6/README.md)
 7. [Assault](./lectures/mod7/README.md)
