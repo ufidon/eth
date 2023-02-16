@@ -18,6 +18,8 @@ What is enumeration?
   - To Determine OS being used
 - Intrusive process
   - not only identifying a resource, but also attempting to access it
+  - get written permission first
+    - have a Rules of Engagement (ROE) and a Statement of Work (SOW) in place
 
 
 NBTscan
@@ -37,12 +39,13 @@ Practice ✏️
   nbtscan -h
   # 2. enumerate windows vm
   nbtscan windows_vm_ip # windows_vm_ip is found with nmap from Kali
+  nbtscan nat_network_id/24 -r
   ```
 
 
-Enumerating Microsoft Operating Systems
+Enumerating [Microsoft Operating Systems](https://microsoft.fandom.com/wiki/Microsoft_Windows)
 ---
-- Study OS history
+- Study [OS history](https://en.wikipedia.org/wiki/Microsoft_Windows_version_history)
   - Knowing your target makes your job easier
 - Many attacks that work for older Windows OSs still work with newer versions
 
@@ -191,7 +194,14 @@ Network Basic Input Output System (NetBIOS)
 ---
 - Programming interface
 - Allows computer communication over a LAN
+- NetBIOS listens on
+  - UDP port 137 for NetBIOS Name service
+  - UDP port 138 for NetBIOS Datagram service
+  - TCP port 139 for NetBIOS Session service
 - Used to share files and printers
+  - requires an upper-level service called Server Message Block (SMB)
+  - In Windows 2000 and later, SMB listens on TCP port 445 and doesn't need NetBIOS over TCP/IP unless support for older Windows versions is required
+
 
 
 [NetBIOS names](https://en.wikipedia.org/wiki/NetBIOS)
@@ -330,7 +340,8 @@ netdiscover
 
 
 # References
-* [What is new in Windows](https://learn.microsoft.com/en-us/windows/whats-new/)
+* [What is new in Windows?](https://learn.microsoft.com/en-us/windows/whats-new/)
+* [Where to Download Windows 10, 8.1, and 7 ISOs Legally?](https://www.howtogeek.com/186775/how-to-download-windows-7-8-and-8.1-installation-media-legally/)
 * _old OSes_
   * [WinWorld](https://winworldpc.com/library/operating-systems)
   * [Old versions of Linux](https://soft.lafibre.info/)
