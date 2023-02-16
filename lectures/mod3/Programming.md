@@ -1,4 +1,4 @@
-# Automation by Programming
+# Programming for security professionals
 
 Objectives
 ---
