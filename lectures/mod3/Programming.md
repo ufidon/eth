@@ -42,10 +42,52 @@ A C Program
 ---
 
 ```c
+// A simple C program
 #include <stdio.h> // standard library for printf
 int main(int argc, char* argv[]){ /* Every C program needs a main() */
   printf("Ethical hacking is fun!\n");
 
+  return 0;
+}
+```
+
+```c
+// print command line parameters
+#include <stdio.h> // standard library for printf
+int main(int argc, char* argv[]){ /* Every C program needs a main() */
+	int i;
+  printf("the number of cmd parameters: %d\n", argc);
+	
+	for (i=0; i< argc; i++)
+		printf("%d: %s\n", i, argv[i]);
+	
+  return 0;
+}
+```
+
+```c
+// find the area of a circle
+#include <stdio.h> // standard library for printf
+#include <stdlib.h>
+int main(int argc, char* argv[]){ /* Every C program needs a main() */
+	double radius;
+	if( argc != 2){
+		printf("usage: %s radius\n", argv[0]);
+		return 1; 
+	}
+	
+	radius = strtod(argv[1], 0);
+	
+	if (radius <= 0)
+	{
+		printf("The radius must be positive.\n");
+		return 2;
+	}
+	
+	
+	 printf("the area of the circle with radius %g is %g \n", radius, 3.1415926*radius*radius);
+	
+	
   return 0;
 }
 ```
