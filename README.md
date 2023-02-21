@@ -29,12 +29,14 @@ Tentative topics:
 ## Reference textbooks
 * [Hands-On Ethical Hacking and Network Defense](https://www.vitalsource.com/products/hands-on-ethical-hacking-and-network-defense-michael-t-simpson-nicholas-v9781305480681)
   * [CNIT 123: Ethical Hacking and Network Defense](https://samsclass.info/123/123_F18.shtml)
-  * [CNIT 124: Advanced Ethical Hacking](https://samsclass.info/124/124_S19.shtml)
+* [CNIT 124: Advanced Ethical Hacking](https://samsclass.info/124/124_S19.shtml)
+  * [Penetration Testing: A Hands-On Introduction to Hacking](https://nostarch.com/pentesting)
+  * [Violent Python: A Cookbook for Hackers, Forensic Analysts, Penetration Testers and Security Engineers](https://booksite.elsevier.com/9781597499576/index.php)
+  * [Python Ethical Hacking from Scratch](https://github.com/PacktPublishing/Python-Ethical-Hacking)
 * [Computer & Internet Security: A Hands-on Approach3rd Edition](https://www.handsonsecurity.net/)
   * [SEED Labs](https://seedsecuritylabs.org/labs.html)
-* [Python Ethical Hacking from Scratch](https://github.com/PacktPublishing/Python-Ethical-Hacking)
 * [CEH v11 Certified Ethical Hacker Study Guide](https://www.wiley.com/en-us/CEH+v11+Certified+Ethical+Hacker+Study+Guide-p-9781119800286)
-* [Unofficial Study Guide for CEH v11 exam](https://github.com/imrk51/CEH-v11-Study-Guide)
+  * [Unofficial Study Guide for CEH v11 exam](https://github.com/imrk51/CEH-v11-Study-Guide)
 * *Additional resources*
   * [Hacking security ebooks](https://github.com/yeahhub/Hacking-Security-Ebooks)
   * [Hacking books](https://github.com/InspectorDidi/Hacking-Books)
