@@ -323,7 +323,7 @@ Understanding the BLT of Perl
   - Comment lines begin with the # character
   - The & character is used when calling a function
 ```perl
-#/usr/bin/env perl
+#!/usr/bin/env perl
 
 $word = "Hack";
 &speak;
@@ -340,7 +340,7 @@ sub speak{
 
 # do a ping sweep
 for ($p=1; $p<100; $p++){
-  print qx"ping 10.0.2.$a -c 2 -w1";
+  print qx"ping 10.0.2.$p -c 2 -w1";
 }
 ```
 
@@ -348,7 +348,7 @@ for ($p=1; $p<100; $p++){
 Branching in Perl
 ---
 ```perl
-#/usr/bin/env perl
+#!/usr/bin/env perl
 print "Enter your IQ (1-10): ";
 open (INFO, "-");
 $IQ = <INFO>;
