@@ -4,7 +4,7 @@ Objectives
 ---
 - Describe vulnerabilities of Windows and Linux operating systems
 - Identify specific vulnerabilities and explain ways to fix them
-- Explain techniques to harden systems against Windows and Linux vulnerabilities
+- Exploit techniques to harden systems against Windows and Linux vulnerabilities
 
 
 Windows OS Vulnerabilities
@@ -21,6 +21,15 @@ Windows OS Vulnerabilities
 ---
 - under construction
 - [keyword search](https://cve.mitre.org/cve/search_cve_list.html)
+
+
+Practice ✏️ 
+---
+- Find the following CVEs on [CVE List](https://www.cve.org/)
+  - CVE-2021-34527
+  - CVE-2021-33740
+  - CVE-2021-33756
+- Search them in Google, can you find fixes, patches or updates?
 
 
 Windows File Systems
@@ -56,9 +65,10 @@ NTFS
   - Can “stream” (hide) information behind existing files
     - Without affecting function, size, or other information
   - Several detection methods
+    - [AlternateStreamView](https://www.nirsoft.net/utils/alternate_data_streams.html)
 
 
-Practice
+Practice ✏️ 
 ---
 - Inside Windows VM, open a Command Prompt
   ```cmd
@@ -68,7 +78,7 @@ Practice
   echo "extra data saved in ADS" > mydata.txt:ads
   :: 3. check ADS data
   dir /r
-  type mydata.txt:ads
+  notepad mydata.txt:ads
   ```
 
 
@@ -76,13 +86,13 @@ Remote Procedure Call(RPC)
 ---
 - Interprocess communication mechanism
   - Allows a program running on one host to run code on a remote host
-- Worm that exploited RPC
-  - Conficker worm
+- Worms that exploited RPC
+  - [Conficker worm](https://support.microsoft.com/en-us/topic/virus-alert-about-the-win32-conficker-worm-73e7df59-ec59-d474-bbe8-1f06b7caef60)
 - Microsoft Baseline Security Analyzer
   - Determines if system is vulnerable due to an RPC-related issue
 
 
-Practice
+Practice ✏️
 ---
 - Read and summarize the article [Windows 8.1 stops pass-the-hash attacks](https://www.csoonline.com/article/2612325/windows-8-1-stops-pass-the-hash-attacks.html)
 - [Launch PtH attack on Windows 8.1](https://samsclass.info/lulz/pth-8.1.htm)
@@ -167,11 +177,12 @@ NetBIOS
 - Software loaded into memory 
   - Enables computer program to interact with network resource or device
 - NetBIOS isn’t a protocol
-  - Interface to a network protocol
+  - It is an interface to a network protocol
 - NetBios Extended User Interface (NetBEUI)
   - Fast, efficient network protocol
   - Allows NetBIOS packets to be transmitted over TCP/IP
   - NBT is NetBIOS over TCP
+    - enabled by default prior to Windows Vista and Server 2008
 - Systems running newer Windows OSs 
   - Vista, Server 2008, Windows 7, and later versions
   - Share files and resources without using NetBIOS
@@ -183,9 +194,7 @@ Server Message Block
 ---
 - Used to share files 
   - Usually runs on top of:
-    - NetBIOS
-    - NetBEUI, or
-    - TCP/IP
+    - NetBIOS, NetBEUI, or TCP/IP
 - Several hacking tools target SMB
   - [L0phtcrack’s](https://l0phtcrack.gitlab.io/) SMB Packet Capture utility and SMBRelay
     - It took Microsoft seven years to patch these
@@ -201,6 +210,7 @@ Server Message Block
   - Spectacular DoS vulnerabilities
 
 
+
 Common Internet File System
 ---
 - Standard protocol
@@ -211,6 +221,7 @@ Common Internet File System
   - Enables sharing of network resources over the Internet
 - Relies on other protocols to handle service announcements
   - Notifies users of available resources
+    - by Network Neighborhood or My Network Places services
 - Enhancements
   - Locking features
   - Caching and read-ahead/write-behind
@@ -220,11 +231,13 @@ Common Internet File System
 - Server security methods
   - Share-level security (folder password)
   - User-level security (username and password)
-- Attackers look for servers designated as domain controllers
-  - Severs handle authentication
-- Windows Server 2003 and 2008
-  - Domain controller uses a global catalog (GC) server 
-    - Locates resources among many objects
+- Attackers look for servers designated as domain controllers (DCs)
+  - because DCs handle authentication
+- DCs are usually global catalog (GC) servers
+    - Locate resources among many objects
+- CIFS is now obsolete and SMBv3 is used
+  - SMB3 introduced in Windows 8
+  - SMB 3.1.1 introduced in Windows 10
 
 
 Domain Controller Ports
@@ -532,3 +545,5 @@ Secure Configuration
 
 
 # References
+- [How to Create, Open, Detect, and Remove Alternate Data Streams](https://www.minitool.com/partition-disk/alternate-data-streams.html)
+- [nirsoft](https://www.nirsoft.net/)
