@@ -547,3 +547,7 @@ Secure Configuration
 # References
 - [How to Create, Open, Detect, and Remove Alternate Data Streams](https://www.minitool.com/partition-disk/alternate-data-streams.html)
 - [nirsoft](https://www.nirsoft.net/)
+- [Pass the Hash on Windows 8.1](https://samsclass.info/lulz/pth-8.1.htm)
+  - [Hacking Windows Passwords with Pass the Hash](http://colesec.inventedtheinternet.com/hacking-windows-passwords-with-pass-the-hash/)
+  - [Download Windows 8.1 Disc Image (ISO File)](https://www.microsoft.com/en-us/software-download/windows8ISO)
+  - [Free Windows 8 and 8.1 Product Keys That Still Work](https://softwarekeep.com/blog/free-windows-8-and-8-1-product-keys-that-still-work-in-2021)
