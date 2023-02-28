@@ -149,7 +149,7 @@ exploit
     - Reduced credential footprint
     - Aggressive session expiry
     - New "protected users" RID
-    - Hardened LSASS process
+    - Hardened Local Security Authority Subsystem Service (LSASS) process
   - Authentication policies and silos
     - Enable isolation of users or resources
       - Keeps user in their silo
