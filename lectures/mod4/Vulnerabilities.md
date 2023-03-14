@@ -500,18 +500,31 @@ sudo gvm-setup # take a few minutes to complete
 # NOTE DOWN THE PASSWORD
 # then it is setup successfully, otherwise, create a user admin manually
 # change mypasswd to yours
-gvmd --user=admin --new-password mypasswd
+sudo gvmd --user=admin --new-password mypasswd
+
+# create a user kali
+sudo gvmd --user=kali --new-password kali
 
 # 3. continue running the following command until it reports setup is ok
-gvm-check-setup
+sudo gvm-check-setup
 
 # 4. update gvm databases of CVEs and NVTs (Network Vulnerability Threats)
 sudo gvm-feed-update
 
 # 5. start gvm
- sudo gvm-start
+sudo gvm-start
 
-# 6. use gvm: open a brower, go to https://127.0.0.1:9392
+# 5.5 Fix Error "The SCAP database is required
+sudo gvm-stop
+sudo greenbone-scapdata-sync
+sudo greenbone-certdata-sync
+##!!! Then close all apps and reboot Kali
+
+# 6. use gvm
+# 6.1 start gvm, it will open a browser automatically
+sudo gvm-start
+# 6.2 If no brower opened automatically. open a brower, go to https://127.0.0.1:9392
+# For the warning, click Advanced, accept risk and continue
 # login with the user admin created above
 
 # 7. scan local & remote computers
@@ -599,3 +612,4 @@ Secure Configuration
   - [Hacking Windows Passwords with Pass the Hash](http://colesec.inventedtheinternet.com/hacking-windows-passwords-with-pass-the-hash/)
   - [Download Windows 8.1 Disc Image (ISO File)](https://www.microsoft.com/en-us/software-download/windows8ISO)
   - [Free Windows 8 and 8.1 Product Keys That Still Work](https://softwarekeep.com/blog/free-windows-8-and-8-1-product-keys-that-still-work-in-2021)
+- [How to Fix Greenbone Vulnerability Manager (GVM) (OpenVAS) Error "The SCAP database is required" on Kali Linux](https://dannyda.com/2022/10/12/how-to-fix-greenbone-vulnerability-manager-gvm-openvas-error-the-scap-database-is-required-on-kali-linux/)
