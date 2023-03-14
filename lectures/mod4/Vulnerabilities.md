@@ -487,17 +487,22 @@ Practice ✏️
 - Install, configure and use OpenVAS (GVM - Greenbone Vulnerability Management) on Kali VM
 
 ```bash
+# 0. update and upgrade Kali
+sudo apt update -y
+sudo apt upgrade -y
+
 # 1. Install gvm
 sudo apt install openvas
 
 # 2. setup gvm
 sudo gvm-setup # take a few minutes to complete
 # If you see a message "User created with password: <long-random string>",
+# NOTE DOWN THE PASSWORD
 # then it is setup successfully, otherwise, create a user admin manually
 # change mypasswd to yours
 gvmd --user=admin --new-password mypasswd
 
-# 3. continue run the following command until it reports setup is ok
+# 3. continue running the following command until it reports setup is ok
 gvm-check-setup
 
 # 4. update gvm databases of CVEs and NVTs (Network Vulnerability Threats)
