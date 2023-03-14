@@ -1,3 +1,6 @@
+# Greenbone OpenVAS on Kali
+[Install Gvm on Kali](https://www.kali.org/tools/gvm/)
+
 # Run Greenbone OpenVAS on WSL2 Ubuntu
 
 ## Install Docker Engine on Ubuntu

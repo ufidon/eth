@@ -401,7 +401,7 @@ Enable Logging and Review Logs Regularly
     - Use log-monitoring tool
 
 
-Disable Unused Services and Filtering Ports
+Disable Unused Services and Filter Ports
 ---
 - Disable unneeded services
 - Delete unnecessary applications or scripts
@@ -468,6 +468,8 @@ Tools for Identifying Linux Vulnerabilities
 ---
 - [CVE Web site](https://cve.mitre.org/cve/search_cve_list.html)
   - Source for discovering possible attacker avenues
+- [Exploit database](https://www.exploit-db.com/)
+  - Find vulnerable *wget* versions and their vulnerabilities
 
 
 OpenVAS can enumerate multiple OSs
@@ -478,6 +480,41 @@ OpenVAS can enumerate multiple OSs
   - Identify via enumeration any logon accounts 
   - Learn names of shared folders by using enumeration
   - Identify services running
+
+
+Practice ✏️
+---
+- Install, configure and use OpenVAS (GVM - Greenbone Vulnerability Management) on Kali VM
+
+```bash
+# 1. Install gvm
+sudo apt install openvas
+
+# 2. setup gvm
+sudo gvm-setup # take a few minutes to complete
+# If you see a message "User created with password: <long-random string>",
+# then it is setup successfully, otherwise, create a user admin manually
+# change mypasswd to yours
+gvmd --user=admin --new-password mypasswd
+
+# 3. continue run the following command until it reports setup is ok
+gvm-check-setup
+
+# 4. update gvm databases of CVEs and NVTs (Network Vulnerability Threats)
+sudo gvm-feed-update
+
+# 5. start gvm
+ sudo gvm-start
+
+# 6. use gvm: open a brower, go to https://127.0.0.1:9392
+# login with the user admin created above
+
+# 7. scan local & remote computers
+# 7.1 create target from tab Configuration
+# 7.2 create scan task from tab Scan Management
+
+# 8. scan the target
+```
 
 
 Checking for Trojan Programs
@@ -501,6 +538,15 @@ Checking for Trojan Programs
   - Attackers hide tools 
     - Perform further attacks
     - Have access to backdoor programs
+
+
+Practice ✏️
+---
+- Find information about the following Linux trojans, rootkits, etc. with Google
+  - Backdoor.Linux.KAITEN.AB 
+  - Linux Rootkit 5 (LRK5)
+    - LoJax: an UEFI rootkit
+- Find local rootkit with [chkrootkit](https://www.chkrootkit.org/)
 
 
 More Countermeasures Against Linux Attacks
@@ -539,9 +585,6 @@ Secure Configuration
   - Included in many Linux distributions
 - Free benchmark tools
   - Center for Internet Security
-- Security Blanket 
-
-
 
 
 # References

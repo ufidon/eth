@@ -111,6 +111,8 @@ sudo apt install p7zip-full build-essential gcc perl cmake automake curl git gea
 ## References
 * *Projects from samsclass*
   * [Project 1: Kali Virtual Machine](https://samsclass.info/152/proj/123p1kali.htm)
+    * [katoolin3
+](https://github.com/s-h-3-l-l/katoolin3)
   * [Project 2: Windows 2016 Server Virtual Machine](https://samsclass.info/123/proj10/123p2win.htm)
 * *Check virtualization availability*
   * [Linux Find Out If CPU Support Intel VT/AMD-V Virtualization For KVM](https://www.cyberciti.biz/faq/linux-xen-vmware-kvm-intel-vt-amd-v-support/)
