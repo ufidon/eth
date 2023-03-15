@@ -485,6 +485,7 @@ OpenVAS can enumerate multiple OSs
 Practice ✏️
 ---
 - Install, configure and use OpenVAS (GVM - Greenbone Vulnerability Management) on Kali VM
+- Method 1. Install locally 
 
 ```bash
 # 0. update and upgrade Kali
@@ -514,12 +515,6 @@ sudo gvm-feed-update
 # 5. start gvm
 sudo gvm-start
 
-# 5.5 Fix Error "The SCAP database is required
-sudo gvm-stop
-sudo greenbone-scapdata-sync
-sudo greenbone-certdata-sync
-##!!! Then close all apps and reboot Kali
-
 # 6. use gvm
 # 6.1 start gvm, it will open a browser automatically
 sudo gvm-start
@@ -532,6 +527,50 @@ sudo gvm-start
 # 7.2 create scan task from tab Scan Management
 
 # 8. scan the target
+
+# Note: Fix Error "The SCAP database is required
+sudo gvm-stop
+
+sudo runuser -u _gvm --  greenbone-nvt-sync
+sudo runuser -u _gvm --  greenbone-feed-sync --type SCAP
+sudo runuser -u _gvm --  greenbone-feed-sync --type CERT
+sudo runuser -u _gvm --  greenbone-feed-sync --type GVMD_DATA
+
+sudo reboot
+```
+
+- Method 2. Install with docker
+
+```bash
+# 1. update and upgrade kali
+sudo apt update -y && sudo apt upgrade -y
+
+# 2. install docker
+sudo apt install curl docker.io docker-compose
+
+# 3. allow the current user to run docker
+sudo usermod -aG docker $USER && su $USER
+
+# 4. download the Greenbone Community Edition docker compose file
+export DOWNLOAD_DIR=$HOME/greenbone-community-container && mkdir -p $DOWNLOAD_DIR
+
+cd $DOWNLOAD_DIR && curl -f -L https://greenbone.github.io/docs/latest/_static/docker-compose-22.4.yml -o docker-compose.yml
+
+# 5. download the container image
+docker-compose -f $DOWNLOAD_DIR/docker-compose.yml -p greenbone-community-edition pull
+
+# 6. Starting the Greenbone Community Containers
+docker-compose -f $DOWNLOAD_DIR/docker-compose.yml -p greenbone-community-edition up -d
+
+# By default, a user admin with the password admin is created
+# If you want to change the password of admin
+docker-compose -f $DOWNLOAD_DIR/docker-compose.yml -p greenbone-community-edition \
+    exec -u gvmd gvmd gvmd --user=admin --new-password=<password>
+
+#!!!! After the services have started and all feed data has been loaded,
+# the Greenbone Security Assistant web interface – GSA – 
+# can be opened in the browser.
+xdg-open "http://127.0.0.1:9392" 2>/dev/null >/dev/null &    
 ```
 
 
@@ -612,4 +651,5 @@ Secure Configuration
   - [Hacking Windows Passwords with Pass the Hash](http://colesec.inventedtheinternet.com/hacking-windows-passwords-with-pass-the-hash/)
   - [Download Windows 8.1 Disc Image (ISO File)](https://www.microsoft.com/en-us/software-download/windows8ISO)
   - [Free Windows 8 and 8.1 Product Keys That Still Work](https://softwarekeep.com/blog/free-windows-8-and-8-1-product-keys-that-still-work-in-2021)
-- [How to Fix Greenbone Vulnerability Manager (GVM) (OpenVAS) Error "The SCAP database is required" on Kali Linux](https://dannyda.com/2022/10/12/how-to-fix-greenbone-vulnerability-manager-gvm-openvas-error-the-scap-database-is-required-on-kali-linux/)
+- [Update in progress](https://forum.greenbone.net/t/update-in-progress/9866/9)
+  - [How to Fix Greenbone Vulnerability Manager (GVM) (OpenVAS) Error "The SCAP database is required" on Kali Linux](https://dannyda.com/2022/10/12/how-to-fix-greenbone-vulnerability-manager-gvm-openvas-error-the-scap-database-is-required-on-kali-linux/)
