@@ -6,11 +6,11 @@
   - There is an [exploit](https://www.exploit-db.com/exploits/14402) integrated with [metasploit-framework](https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/ftp/easyftp_cwd_fixret.rb)
 - There are [many software](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=buffer+overflow) contain the vulnerability of buffer overflow, but not all of them can be used to take control of a server
 
-## Equipments
+## Equipment
 - Both the Kali Linux VM 🐧 and the Windows server VM 🪟
 
 ## Tasks
-On Windows server VM, 🪟
+On Windows server VM 🪟
 
 0. Stop the FileZilla server
 1. Install, configure and run EasyFTP
@@ -25,7 +25,7 @@ On Windows server VM, 🪟
    sc delete easyftpbasicsvr
    ```
 
-On Kali Linux VM, 🐧 in a command terminal
+On Kali Linux VM 🐧, in a command terminal
 
 2. Exploit the Windows target
 
@@ -74,16 +74,16 @@ msf > exit
 ~ $
 ```
 
-On Windows server VM, 🪟
+On Windows server VM 🪟
 
 3. Hardening the target machine by turning on Data Execution Protection (DEP) 
 4. Restart Windows server VM then restart EasyFTP
 
-On Kali Linux VM, 🐧
+On Kali Linux VM 🐧
 
 5. Launch the easyftp_cwd_fixret exploit again
 
-On Windows server VM, 🪟
+On Windows server VM 🪟
 
 6. If you see a box pops up saying "ftpbasicsvr.exe has stopped working", then DEP has saved your server by stopping the attack!
 

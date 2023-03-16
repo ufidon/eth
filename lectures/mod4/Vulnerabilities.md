@@ -531,7 +531,7 @@ sudo gvm-start
 # Note: Fix Error "The SCAP database is required
 sudo gvm-stop
 
-sudo runuser -u _gvm --  greenbone-nvt-sync
+sudo runuser -u _gvm --  greenbone-nvt-sysnc
 sudo runuser -u _gvm --  greenbone-feed-sync --type SCAP
 sudo runuser -u _gvm --  greenbone-feed-sync --type CERT
 sudo runuser -u _gvm --  greenbone-feed-sync --type GVMD_DATA
@@ -539,7 +539,7 @@ sudo runuser -u _gvm --  greenbone-feed-sync --type GVMD_DATA
 sudo reboot
 ```
 
-- Method 2. Install with docker
+- Method 2. Install with docker (Recommended)
 
 ```bash
 # 1. update and upgrade kali
@@ -570,7 +570,9 @@ docker-compose -f $DOWNLOAD_DIR/docker-compose.yml -p greenbone-community-editio
 #!!!! After the services have started and all feed data has been loaded,
 # the Greenbone Security Assistant web interface – GSA – 
 # can be opened in the browser.
-xdg-open "http://127.0.0.1:9392" 2>/dev/null >/dev/null &    
+xdg-open "http://127.0.0.1:9392" 2>/dev/null >/dev/null &  
+
+# !!!! KEEP YOUR VM RUNNING OVER NIGHT, IT MAY UPDATE THE DATABASE.
 ```
 
 
