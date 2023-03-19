@@ -3,24 +3,9 @@
 Tentative topics:
 
 1. [Ethical hacking overview](./lectures/mod1/README.md)
-   1. Networking Foundations 
-   2. Security Foundations 
-   3. Wireless Security
-   4. Security Architecture and Design
-   5. Cloud Computing and the Internet of Things 
 2. [Reconnaissance](./lectures/mod2/README.md)
-   1. Footprinting and Reconnaissance
 3. [Scanning](./lectures/mod3/README.md)
-   1. Scanning Networks 
-   2. Enumeration
-   3. Sniffing
 4. [Exploitation, Access and Escalation](./lectures/mod4/README.md)
-   1. Desktop and Server OS Vulnerabilities
-   2. System Hacking
-   3. Malware
-   4. Social Engineering
-   5. Attack and Defense
-   6. Cryptography
 5. [Exfiltration](./lectures/mod5/README.md)
 6. [Sustainment](./lectures/mod6/README.md)
 7. [Assault](./lectures/mod7/README.md)
