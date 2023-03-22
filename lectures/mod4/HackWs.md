@@ -100,30 +100,114 @@ CGI Languages
 
 Practice on CGI examples 📝
 ---
-- Python
-  - [Running a Simple CGI Web Server](https://johnloomis.org/python/cgiserver.html)
+- CGI Programming in Python
+
+```bash
+# create directories
+mkdir pythonweb pythonweb/{cgi-bin,htbin}
+cd pythonweb
+
+# create cgi program in Python
+touch htbin/hello.py
+# open htbin/hello.py, paste the code below, save it
+mousepad htbin/hello.py
+chmod +x htbin/hello.py
+
+# run python http.server with cgi support
+python3 -m http.server --bind localhost --cgi 8000
+
+# open the website
+python3 -m http.server --bind localhost --cgi 8000
+# or type the address http://localhost:8000/htbin/hello.py in a browser
+```
 
 ```python
-#!/usr/bin/python
-
-print 'Content-Type: text/html'
-print
-print '<html>'
-print '<head><title>Hello from Python</title></head>'
-print '<body>'
-print '<h2>Hello from Python</h2>'
-print '</body></html>'
+#!/usr/bin/env python3
+# file name: hello.py
+print("Content-Type: text/html\n")
+print("<!doctype html><title>Hello</title><h2>hello world</h2>")
 ```
 
-- [Perl](https://metacpan.org/pod/HTTP::Server::Simple::CGI)
+- [CGI Programming in Perl](https://metacpan.org/pod/HTTP::Server::Simple::CGI)
   - [Explore HTTP::Server::Simple::CGI](https://lethain.com/intro-to-http-server-simple-cgi/)
 
-```perl
-#!/usr/bin/perl
-# Should be placed in the cgi-bin directory on the Web server
-print "Content-type: text/html\n\n";
-print "Hello Security Testers!";
+```bash 
+mkdir perlcgi
+cd perlcgi
+
+sudo perl -MCPAN -e shell
+# enter cpan
+install HTTP::Server::Simple::CGI
+# wait until it is done, exit cpan
+exit
+
+# use an editor to copy the perl code below into hi.pl
+mousepad hi.pl
+
+# run hi.pl
+chmod +x hi.pl
+./hi.pl
+
+# in the browser address box, type http://localhost:8080/hello
 ```
+
+
+```perl
+#!/bin/perl
+# copy from https://metacpan.org/pod/HTTP::Server::Simple
+{
+package MyWebServer;
+ 
+use HTTP::Server::Simple::CGI;
+use base qw(HTTP::Server::Simple::CGI);
+ 
+my %dispatch = (
+    '/hello' => \&resp_hello,
+    # ...
+);
+ 
+sub handle_request {
+    my $self = shift;
+    my $cgi  = shift;
+   
+    my $path = $cgi->path_info();
+    my $handler = $dispatch{$path};
+ 
+    if (ref($handler) eq "CODE") {
+        print "HTTP/1.0 200 OK\r\n";
+        $handler->($cgi);
+         
+    } else {
+        print "HTTP/1.0 404 Not found\r\n";
+        print $cgi->header,
+              $cgi->start_html('Not found'),
+              $cgi->h1('Not found'),
+              $cgi->end_html;
+    }
+}
+ 
+sub resp_hello {
+    my $cgi  = shift;   # CGI.pm object
+    return if !ref $cgi;
+     
+    my $who = $cgi->param('name');
+     
+    print $cgi->header,
+          $cgi->start_html("Hello"),
+          $cgi->h1("Hello $who!"),
+          $cgi->end_html;
+}
+ 
+} 
+ 
+# start the server on port 8080
+my $pid = MyWebServer->new(8080)->background();
+print "Use 'kill $pid' to stop server.\n";
+```
+
+- Explore [Apache CGI](https://httpd.apache.org/docs/2.4/howto/cgi.html)
+  - [httpd-cgi](https://github.com/hypoport/httpd-cgi)
+  - [Docker httpd apache and getting cgi-bin to execute perl script](https://stackoverflow.com/questions/64743879/docker-httpd-apache-and-getting-cgi-bin-to-execute-perl-script)
 
 
 [Active Server Pages (ASP)](https://dotnet.microsoft.com/en-us/apps/aspnet)
@@ -377,5 +461,7 @@ Practice 📝
 
 # References
 - [Computer Systems Fundamentals](https://w3.cs.jmu.edu/kirkpams/OpenCSF/Books/csf/html/index.html)
+- [How to run CGI "hello world" with python http.server](https://stackoverflow.com/questions/30516414/how-to-run-cgi-hello-world-with-python-http-server)
 - [CGI Programming with Perl](https://www.oreilly.com/library/view/cgi-programming-with/1565924193/)
   - [Perl CGI](http://www.perlmeme.org/tutorials/cgi_script.html)
+    - [CGI.pm](https://metacpan.org/release/LDS/CGI.pm-3.42/view/CGI.pm)
