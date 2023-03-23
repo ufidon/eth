@@ -456,7 +456,6 @@ Practice 📝
 ---
 - Explore the following projects
   - [OWASP WebGoat](https://owasp.org/www-project-webgoat/)
-  - [MCIR - The Magical Code Injection Rainbow](https://github.com/SpiderLabs/MCIR)
 
 
 # References
@@ -465,3 +464,4 @@ Practice 📝
 - [CGI Programming with Perl](https://www.oreilly.com/library/view/cgi-programming-with/1565924193/)
   - [Perl CGI](http://www.perlmeme.org/tutorials/cgi_script.html)
     - [CGI.pm](https://metacpan.org/release/LDS/CGI.pm-3.42/view/CGI.pm)
+- [MCIR - The Magical Code Injection Rainbow](https://github.com/SpiderLabs/MCIR)
