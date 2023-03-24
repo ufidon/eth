@@ -23,6 +23,7 @@ sudo apt install -y docker.io
 sudo systemctl enable docker --now
 sudo usermod -aG docker $USER
 # !!!  logout and in again, or restart Kali VM
+# 2. run webgoat using docker, webwolf will be started automatically
 docker run -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webgoat/webgoat
 # or
 docker run --name webgoat -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webgoat/webgoat
@@ -34,6 +35,7 @@ docker run --name webgoat -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webg
 
 **Method 2: using jar**
 
+- Uninstall any previously installed JDK and JRE
 - Download and install Install [JDK FX 17+](https://www.azul.com/downloads/#zulu)
   - Make sure choose "Set JAVA_HOME variable -> Entire feature will be installed on local hard drive" during the installation
 - Run WebGoat in command prompt or terminal
@@ -41,7 +43,6 @@ docker run --name webgoat -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webg
 ```cmd
 :: change the jar file name in the command line to yours
 java -Dfile.encoding=UTF-8 -Dwebgoat.port=8080 -Dwebwolf.port=9090 -jar webgoat-2023.4.jar
-:: change the jar file to yours
 ```
 
 - In a browser, access 
