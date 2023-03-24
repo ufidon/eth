@@ -9,6 +9,11 @@
 ## Equipment
 - Both the Kali Linux VM 🐧 and the Windows server VM 🪟
 
+## Prerequisite!!!
+- [Lab01](../lab01/README.md) must be done first if you use a new Windows VM
+  - Especially Task 1 in lab01
+    - DEP is turned off
+
 ## Tasks
 On Windows server VM 🪟
 
