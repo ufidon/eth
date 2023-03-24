@@ -12,7 +12,7 @@
 ## Prerequisite!!!
 - [Lab01](../lab01/README.md) must be done first if you use a new Windows VM
   - Especially Task 1 in lab01
-    - DEP is turned off
+    - DEP (Data Execution Protection) is turned off
 
 ## Tasks
 On Windows server VM 🪟

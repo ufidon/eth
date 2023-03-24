@@ -45,7 +45,7 @@ Access Point (AP)
 
 Reading ✏️
 ---
-- Explore Wi-Fi network scanner applications
+- Explore Wi-Fi network scanner applications for their capabilities
   - [Kismet: Wi-Fi, Bluetooth, RF, and more](https://www.kismetwireless.net/)
   - [inSSIDer](https://www.metageek.com/inssider/)
     - [netstumbler](http://www.netstumbler.com/)
@@ -257,7 +257,210 @@ Lightweight Extensible Authentication Protocol (LEAP)
 - Joshua Wright wrote the [ASLEAP hacking tool to crack LEAP](https://github.com/joswr1ght/asleap)
 
 
+More Secure EAP Methods
+---
+- Extensible Authentication Protocol-Transport Layer Security (EAP-TLS)
+  - Secure but rarely used
+    - because both client and server need certificates signed by a CA
+- Protected EAP (PEAP) and Microsoft PEAP
+  - Very secure, only requires server to have a certificate signed by a CA
+
+
+802.1X components
+---
+- Supplicant
+  - The user accessing a WLAN
+- Authenticator
+  - The AP
+- Authentication server
+  - Checks an account database to see if user’s credentials are acceptable
+  - May use RADIUS (Remote Access Dial-In User Service)
+
+
+Wired Equivalent Privacy (WEP)
+---
+- Part of the 802.11b standard
+- Encrypts data on a wireless network
+- WEP has many vulnerabilities
+
+
+Practice 📝
+---
+- [WEP Cracking with Kali Linux](https://www.yeahhub.com/wep-cracking-kali-linux-2018-1-tutorial/)
+
+
+Wi-Fi Protected Access (WPA)
+---
+- Specified in the 802.11i standard
+- Replaces WEP
+- improves encryption by using Temporal Key Integrity Protocol (TKIP)
+- adds an authentication mechanism implementing 802.1X and EAP
+
+
+TKIP Enhancements
+---
+- Message Integrity Check (MIC)
+  - Prevent attacker from injecting forged packets 
+- Extended Initialization Vector (IV) with sequencing rules
+  - Prevent replays (attacker re-sending copied packets)
+- Per-packet key mixing
+  - MAC addresses are used to create a key
+  - Each link uses a different key
+- Rekeying mechanism
+  - Provides fresh keys
+  - Prevents attackers from reusing old keys
+
+
+WPA and WPA-2
+---
+- WPA only implements part of 802.11i, using TKIP
+  - Can run on older hardware
+- WPA2 implements the full IEEE 802.11i security standard, using CCMP
+  - Counter Mode with Cipher Block Chaining Message Authentication Code Protocol (CCMP)
+  - More secure
+
+
+Pre-Shared Key v. 802.1x
+---
+- Both WPA and WPA-2 can run in either mode
+- Pre-Shared Key uses a passphrase the user types into each device
+  - Less secure because 
+    - the user might choose a guessable passphrase 
+    - all devices on the WLAN use the same passphrase
+- 802.1x uses a server to manage keys
+  - Each user has a different key
+  - More secure
+
+
+Hacking WPA
+---
+- In 2008 and 2009, some new WPA attacks were developed, for its weakest form (TKIP)
+  - These attacks allow injection of spoofed packets for limited periods of time
+    - Up to 18 minutes
+  - They don't find the WPA key, but they are a warning that it's time to go to WPA-2
+
+
+Practice 📝
+---
+- [Crack WPA/WPA2 WiFi Passwords using Aircrack-ng & Kali Linux](https://nooblinux.com/crack-wpa-wpa2-wifi-passwords-using-aircrack-ng-kali-linux/)
+
+
+Wardriving
+---
+- Hackers use wardriving
+  - Finding insecure access points
+  - Using a laptop or palmtop computer
+- Wardriving is not illegal
+  - But using the resources of these networks is illegal
+- Warflying
+  - Variant where an airplane is used instead of a car
+
+
+How to wardrive
+---
+- An attacker or security tester simply drives around with the following equipment
+  - Laptop computer
+  - Wireless NIC
+  - An antenna
+  - [Software that scans the area for SSIDs](https://www.kali.org/tools/kismet/)
+- Not all wireless NICs are compatible with scanning programs
+- Antenna prices vary depending on the quality and the range they can cover
+- Scanning software can identify
+  - The company’s SSID
+  - The type of security enabled
+  - The signal strength
+  - Indicating how close the AP is to the attacker
+
+
+NetStumbler
+---
+- Shareware tool written for Windows that enables you to detect WLANs 
+  - Supports 802.11a, 802.11b, and 802.11g standards
+- primarily designed to
+  - Verify your WLAN configuration
+  - Detect other wireless networks
+  - Detect unauthorized APs
+- capable of interface with a GPS
+  - to map out locations of all the WLANs the software detects
+- logs the following information
+  - SSID
+  - MAC address and Manufacturer of the AP
+  - Channel
+  - Signal Strength
+  - Encryption (but not level of encryption)
+
+
+Kismet
+---
+- Another product for conducting wardriving attacks
+- Runs on Linux, BSD, MAC OS X, and Linux PDAs
+- advertised also as a sniffer and IDS (Intrusion Detection System)
+  - can sniff 802.11b, 802.11a, and 802.11g traffic
+- features
+  - Ethereal- and Tcpdump-compatible data logging
+  - AirSnort compatible
+  - Network IP range detection
+  - Hidden network SSID detection
+  - Graphical mapping of networks
+  - Client-server architecture
+  - Manufacturer and model identification of APs and clients
+  - Detection of known default access point configurations
+  - XML output
+  - Supports more than 25 card types
+
+
+Practice ✏️
+---
+- Explore Wi-Fi network scanner applications for wardriving
+  - [Kismet: Wi-Fi, Bluetooth, RF, and more](https://www.kismetwireless.net/)
+  - [inSSIDer](https://www.metageek.com/inssider/)
+    - [netstumbler](http://www.netstumbler.com/)
+
+
+Wireless Hacking
+---
+- not much different from hacking a wired LAN
+- Techniques for hacking wireless networks
+  - Port scanning
+  - Enumeration
+- Equipment
+  - Laptop computer
+  - A wireless NIC
+  - An antenna
+  - Sniffer software
+
+
+Reading ✏️
+---
+- Explore the features of
+  - [AirCrack NG](https://www.kali.org/tools/aircrack-ng/)
+
+
+Practice ✏️
+---
+- [Bypass MAC address filtering](https://kalitut.com/bypass-mac-filtering-wifi/)
+
+
+Countermeasures for Wireless Attacks
+---
+- Anti-wardriving software makes it more difficult for attackers to discover your wireless LAN
+  - Honeypots
+    - Servers with fake data to snare intruders
+  - Fakeap and Black Alchemy Fake AP
+    - Software that makes fake Access Points
+- Use special paint to stop radio from escaping your building
+- secure configuration
+  - Allow only predetermined MAC addresses and IP addresses to have access to the wireless LAN
+  - Use an authentication server instead of relying on a wireless device to authenticate users
+  - Use an EAP authentication protocol
+  - If you use WEP, use 104-bit encryption rather than 40-bit encryption
+    - But just use WPA instead
+  - Assign static IP addresses to wireless clients instead of using DHCP
+  - Don’t broadcast the SSID
+  - Place the AP in the demilitarized zone (DMZ) 
+- pentest with [pineapple](https://shop.hak5.org/)
 
 
 # References
 - [attack and defense labs](https://attackdefense.pentesteracademy.com/)
+- [Step By Step Kali Linux and Wireless Hacking Basics WEP Hacking Part 3](https://www.wirelesshack.org/step-by-step-kali-linux-and-wireless-hacking-basics-wep-hacking-part-3.html)
