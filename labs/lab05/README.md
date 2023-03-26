@@ -60,9 +60,9 @@ Task 2: Crack Windows password hashes with Cain & Abel
   - "Dictionary Attack"
     - Download the dictionary [rockyou.txt](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt)
     - Right-click the top blank area, choose "Add to lick", then add rockyou.txt
-    - Click start to cracking the NT hash
+    - Click start to crack the NT hash
   - "Rainbowcrack-Online"
-    - Explore its usage
+    - Explore its usage by yourself
 
 
 Task 3: Export the NT hash to a text file
