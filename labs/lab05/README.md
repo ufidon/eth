@@ -37,7 +37,7 @@ Task 1: Extract Windows password hashes with Cain & Abel
     - Choose  the Cracker tab, right-click in its blank client area
     - From the popup menu, choose "Add to list"
     - From the dialog "Add NT Hashes from", choose "Import Hashes from local system"
-      - A table of user name, hashes ,etc. will shown in the Cracker tab client area
+      - A table of user name, hashes ,etc. will show in the Cracker tab client area
 
 There are two types of Windows password hashes: 
 - LM Hashes: 
