@@ -26,7 +26,7 @@ Substitution cipher
 - Example, alphabet shifting ciphers: 
   - Julius Caesar’s Cipher (key is 3)
   - ROT-13 (key is 13)
-    - PerformingROT-13twice undoes it
+    - Performing ROT-13 twice undoes it
     - Obfuscation,not Encryption
 
 
