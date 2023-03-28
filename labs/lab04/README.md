@@ -36,11 +36,22 @@ docker run --name webgoat -it -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webg
 **Method 2: using jar**
 
 - Uninstall any previously installed JDK and JRE
-- Download and install Install [JDK FX 17+](https://www.azul.com/downloads/#zulu)
-  - Make sure choose "Set JAVA_HOME variable -> Entire feature will be installed on local hard drive" during the installation
+- Download and install [JDK FX 17+](https://www.azul.com/downloads/#zulu)
+  - choose the right version for your operating system, for example
+    - Java Version: Java 17 (LTS)
+    - Operating System: Windows
+    - Architecture: x86 64-bit
+    - Java Package: **JDK FX**
+    - File format: **.msi**
+  - During the installation,
+    - make sure choose "Set JAVA_HOME variable -> Entire feature will be installed on local hard drive" during the installation
+    - i.e. install everything on local hard drive
+- Download [the latest WebGoat standalone jar file](https://github.com/WebGoat/WebGoat/releases)
 - Run WebGoat in command prompt or terminal
 
 ```cmd
+:: cd to the folder contains your jar file
+cd folder_contains_the_jar_file
 :: change the jar file name in the command line to yours
 java -Dfile.encoding=UTF-8 -Dwebgoat.port=8080 -Dwebwolf.port=9090 -jar webgoat-2023.4.jar
 ```
