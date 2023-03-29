@@ -78,7 +78,13 @@ In WebGoat, complete the following lessons:
 **Note**: take screenshots of
 - the successful solution of each question
 - the green tick of each lesson on the left panel
+- each question 4.5 points, each green tick 0.5 points
 
 
 # Reference
 - [OWASP WebGoat](https://owasp.org/www-project-webgoat/)
+- [Docker – Prevent Container Autostart](https://www.eknori.de/2020-08-26/docker-prevent-container-autostart/)
+  ```bash
+  docker inspect my-container | grep -A 3 RestartPolicy
+  docker update --restart=no my-container
+  ```
