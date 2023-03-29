@@ -64,16 +64,20 @@ java -Dfile.encoding=UTF-8 -Dwebgoat.port=8080 -Dwebwolf.port=9090 -jar webgoat-
 In WebGoat, complete the following lessons:
 
 1. Introduction
-   1. WebGoat
-   2. WebWolf
+   1. WebGoat (No question, green tick only)
+   2. WebWolf (2 questions, and green tick)
 2. General
-   1. HTTP basics
-   2. HTTP proxies
-   3. Developer tools
-   4. CIA triad
+   1. HTTP basics (2 questions, and green tick)
+   2. HTTP proxies (1 question, and green tick)
+   3. Developer tools (2 questions, and green tick)
+   4. CIA triad (1 question, and green tick)
 3. (A3) Injection
-   1. SQL Injection (intro)
-   2. Cross Site Scripting
+   1. SQL Injection (intro) (9 questions, and green tick)
+   
+
+**Note**: take screenshots of
+- the successful solution of each question
+- the green tick of each lesson on the left panel
 
 
 # Reference
