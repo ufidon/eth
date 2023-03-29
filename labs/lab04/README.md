@@ -4,6 +4,7 @@
 - Learn how to use WebGoat and WebWolf
 - Learn HTTP, web developer tools and CIA triad
 - Practice basic SQL injection attack and XSS attack
+- WebGoat version 2023.4 must be used
 
 ## Equipment
 - Kali Linux VM 🐧 OR Windows server VM 🪟 OR Windows 10/11
