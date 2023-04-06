@@ -83,7 +83,7 @@ Task 4: Crack Windows password hashes with HashCat
 - 4.2 Paste or type the NT hash of user test in Kali in a terminal window
   ```bash
   # replace "the NT hash of user test" with the true NT hash of user test
-  cat "the NT hash of user test" > winnt.hash
+  echo "the NT hash of user test" > winnt.hash
   ```
 
 - 4.3 Download [rockyou.txt.gz](https://github.com/praetorian-inc/Hob0Rules/blob/master/wordlists/rockyou.txt.gz), save it in your current working directory, then unzip it
