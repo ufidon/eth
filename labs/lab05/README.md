@@ -153,5 +153,9 @@ Task 4: Crack Windows password hashes with HashCat
 # Reference
 - [samsclass: Project 12: Cracking Windows Password Hashes with Hashcat](https://samsclass.info/123/proj14/123p12winhash.htm)
 - [Hashcat P@ssw0rd Cracking: Basic Usage](https://in.security/2022/06/01/hashcat-pssw0rd-cracking-basic-usage/)
+  - [Practical examples of Hashcat usage](https://miloserdov.org/?p=5426)
+  - [Cracking Microsoft Office password](https://tinyapps.org/docs/hashcat.html)
+  - [Crack RAR Passwords](https://www.doyler.net/security-not-included/crack-rar-files-hashcat)
+  - [Cracking .zip and .rar Archives with Passwords](https://wind010.hashnode.dev/cracking-zip-and-rar-archives-with-passwords)
 - [Password Hashes](https://cybercop-training.ch/?p=213)
 - [Impacket - a collection of Python classes for working with network protocols](https://github.com/fortra/impacket)
