@@ -94,8 +94,9 @@ Task 2: reverse shell
   - 2.2.3. Go back to the previous Kali Linux VM 🐧 terminal
     - 1. "command shell session" opens, run the following commands
       ```cmd
-      # a. view the processes you are using
-      tasklist /V /FI "IMAGENAME eq *shell*"
+      # a. view the malware processes 
+      tasklist /V /FI "IMAGENAME eq bindShell*"
+      tasklist /V /FI "IMAGENAME eq reverseShell*"
       ```
 
 
@@ -153,3 +154,4 @@ Task 3: blocking outgoing connection with Windows firewall
 # Reference
 - [samsclass: 15: Windows Firewall](https://samsclass.info/123/proj10/123p15fire.htm)
 - [Malware attack](https://github.com/ufidon/its250/tree/master/labs/lab07)
+- [filter in tasklist.exe does not take wildcards?](https://stackoverflow.com/questions/11746079/filter-in-tasklist-exe-does-not-take-wildcards)
