@@ -107,7 +107,7 @@ Task 3: blocking outgoing connection with Windows firewall
   - Private profile
   - Public profile
 - 3.2 Create a outbound rule to block all TCP outbound connections
-- 3.3 Go back to the previous Kali Linux VM 🐧 terminal, now the command shell session 1 is closed.
+- 3.3 Go back to the previous Kali Linux VM 🐧 terminal, now the command shell session 1 is closed or becomes nonresponsive to any further commands
 - 3.4 go back to the Windows machine 🪟, restore Windows firewall to its default state
 
 
