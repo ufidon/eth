@@ -49,6 +49,8 @@ sudo gvm-feed-update
 # 5. start gvm
 sudo gvm-start
 
+# !!!! KEEP YOUR VM RUNNING OVER NIGHT, IT MAY UPDATE THE DATABASE.
+
 # 6. use gvm
 # 6.1 start gvm, it will open a browser automatically
 sudo gvm-start
@@ -71,7 +73,6 @@ sudo runuser -u _gvm --  greenbone-feed-sync --type CERT
 sudo runuser -u _gvm --  greenbone-feed-sync --type GVMD_DATA
 
 sudo reboot
-# !!!! KEEP YOUR VM RUNNING OVER NIGHT, IT MAY UPDATE THE DATABASE.
 ```
 
 - Method 2. Install with docker
@@ -137,7 +138,12 @@ Task 3 (40%): Scan system vulnerabilities
   - [metasploitable3-ub1404](https://app.vagrantup.com/rapid7/boxes/metasploitable3-ub1404), 
   - [metasploitable3-win2k8](https://app.vagrantup.com/rapid7/boxes/metasploitable3-win2k8)  
   - the Windows server in the NAT network.
+  - the scan type should be full and deep
 - Generate report for each scan
+- Discuss the top 3 vulnerabilities of each system
+  - effects on the system
+  - exploitation on these vulnerabilities
+  - fix, patch or update of these vulnerabilities
 
 
 # Reference
