@@ -1,4 +1,4 @@
-# Project: Assess the Vulnerability with GVM (OpenVAS)
+# Project: Scan Vulnerabilities with GVM (OpenVAS)
 ## Description
 [GVM (OpenVAS)](https://www.openvas.org/) is a powerful vulnerability scanner. It can be used to scan the vulnerabilities of popular operating systems such as Linux, Windows and MacOS.
 
