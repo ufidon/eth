@@ -16,9 +16,9 @@ This project consists of three tasks:
 - Download and run the current [Kali Linux](https://www.kali.org/get-kali)
 
 ## Steps
-Task 1 (40%): Install GVM (OpenVAS)
+Task 1 (20%): Install GVM (OpenVAS)
 ---
-- Install, configure and use OpenVAS (GVM - Greenbone Vulnerability Management) on Kali VM
+- (10%) Install, configure and use OpenVAS (GVM - Greenbone Vulnerability Management) on Kali VM
 - Method 1. Install locally 
 
 ```bash
@@ -111,11 +111,11 @@ xdg-open "http://127.0.0.1:9392" 2>/dev/null >/dev/null &
 # !!!! KEEP YOUR VM RUNNING OVER NIGHT, IT MAY UPDATE THE DATABASE.
 ```
 
-For a successful installation, in GVM, check Administration -> Feed Status, the status of all types must be current.
+(10%) For a successful installation, in GVM, check Administration -> Feed Status, the status of all types must be current.
 
 ![feed status](./images/feedstatus.png)
 
-Task 2 (20%): Download and run vulnerable systems
+Task 2 (20%, each 10%): Download and run vulnerable systems
 ---
 [metasploitable3-ub1404](https://app.vagrantup.com/rapid7/boxes/metasploitable3-ub1404) and [metasploitable3-win2k8](https://app.vagrantup.com/rapid7/boxes/metasploitable3-win2k8) are provided as virtual machine images, 
 - download the appropriate versions  
@@ -132,19 +132,19 @@ Task 2 (20%): Download and run vulnerable systems
 - pass: vagrant
 
 
-Task 3 (40%): Scan system vulnerabilities
+Task 3 (60%, 20% for each system): Scan system vulnerabilities
 ---
 - With GVM (OpenVAS), scan the vulnerabilities of 
   - [metasploitable3-ub1404](https://app.vagrantup.com/rapid7/boxes/metasploitable3-ub1404), 
   - [metasploitable3-win2k8](https://app.vagrantup.com/rapid7/boxes/metasploitable3-win2k8)  
-  - the Windows server in the NAT network.
+  - the Windows server (with EasyFTP running) in the NAT network.
   - the scan type should be full and deep
 - Generate report for each scan
 - Discuss the top 3 vulnerabilities of each system
   - effects on the system
   - exploitation on these vulnerabilities
   - fix, patch or update of these vulnerabilities
-
+- For each system: scan (6%), report (2%), discuss (12%, 4% for each discussion)
 
 # Reference
 - [GVM on Kali](https://www.kali.org/tools/gvm/)
